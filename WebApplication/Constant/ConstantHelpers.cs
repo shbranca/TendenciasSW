@@ -16,7 +16,7 @@ namespace WebApplication.Constant
 
         public static class SEEDS
         {
-            public const bool ENABLED = true;
+            public const bool ENABLED = false;
         }
     }
 }
