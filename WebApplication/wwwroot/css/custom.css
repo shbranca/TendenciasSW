@@ -1,0 +1,154 @@
+﻿.m-login__custom {
+    background-color: white;
+}
+
+    .m-login__custom .m-login__logo {
+        background-color: #1660A2;
+        margin: 0 auto !important;
+        height: 120px;
+    }
+
+        .m-login__custom .m-login__logo img {
+            width: 300px;
+            margin-top: 20px;
+        }
+
+    .m-login__custom .tab-pane {
+        padding: 25px 60px;
+    }
+
+@media (max-width: 1200px) {
+    .m-login__custom .tab-pane {
+        padding: 25px 25px;
+    }
+}
+
+.m-login__custom .nav.nav-pills,
+.m-login__custom .nav.nav-tabs {
+    margin-bottom: 0;
+}
+
+.m-login__custom .nav-item {
+    position: relative;
+}
+
+.m-login__custom .nav-link {
+    display: block;
+    padding: 0.9rem 1rem;
+}
+
+.m-login__custom .nav.nav-pills .nav-link,
+.m-login__custom .nav.nav-tabs .nav-link {
+    color: #BCBCBC;
+}
+
+.m-login__custom .nav-tabs .nav-link.active,
+.m-login__custom .nav-tabs .nav-item.show .nav-link {
+    color: #1660A2;
+    background-color: #F1F1F1;
+    border: none;
+}
+
+.m-login__custom .nav-link.show:after {
+    bottom: 0;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(136, 183, 213, 0);
+    border-bottom-color: #ffffff;
+    border-width: 13px;
+    margin-left: -13px;
+}
+
+.m-login__custom .m-login__form .m-login__form-action {
+    margin: 1rem 0 !important;
+}
+
+.m-login__custom .follow-label {
+    margin-bottom: 8px;
+    display: block;
+    font-size: 13px;
+    color: #BCBCBC;
+}
+
+.m-login.m-login--1 .m-login__aside.custom {
+    margin: 0 auto;
+}
+
+.m-login.m-login--1 .m-login__wrapper {
+    overflow: hidden;
+    padding: 35% 0rem 2rem 0rem;
+}
+
+    .m-login.m-login--1 .m-login__wrapper .m-login__form {
+        margin-top: 0 !important;
+    }
+
+.nav.nav-tabs.nav-fill {
+    background-color: #F1F1F1;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: #495057;
+    background-color: #F1F1F1;
+    border: none;
+}
+
+.m-login.m-login--1 .m-login__wrapper .m-login__form .m-login__form-action .btn {
+    padding: .7rem 2rem;
+}
+
+.m-login.m-login--1 .m-login__wrapper .m-login__form .m-login__form-action .m-login__btn--primary {
+    width: 100%;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    min-height: 37.19px;
+}
+
+.table-metronic th {
+    font-weight: bold;
+    background-color: #f4f3f8;
+}
+
+.table-metronic tfoot th {
+    font-weight: bold;
+    background-color: #f4f3f8;
+}
+
+.table-metronic tbody tr:nth-child(odd) {
+    background-color: #faf9fc;
+}
+
+.table-metronic td a {
+    color: #d66f33;
+}
+
+.input-group-select2 {
+    flex: 1 1 auto;
+    width: 1% !important;
+    margin-bottom: 0;
+}
+
+.modal-xl {
+    max-width: 60%;
+}
+
+.m-form.paddingless-group .m-form__group {
+    padding-top: 0 !important;
+}
+
+.has-danger .select2-selection {
+    border: 1px solid #d05250;
+}
+.has-danger .form-control, .has-danger .input-group-text {
+    border-color: #d05250;
+}
+
+.input-group.btn--icon-only > .form-control {
+    padding: .5rem 1rem;
+}

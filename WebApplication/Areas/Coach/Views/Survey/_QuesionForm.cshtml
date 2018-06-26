@@ -1,0 +1,42 @@
+﻿@model WebApplication.Areas.Coach.ViewModels.QuestionViewModel
+<form>
+    <div class="modal-body">
+        <input id="questionId" value="" hidden />
+        <div class="row">
+            <div class="form-group m-form__group col-lg-12">
+                <label asp-for="Type"></label>
+                <select asp-for="Type" class="form-control">
+                    <option value="0">Pregunta de Texto</option>
+                    <option value="1">Pregunta de Selección Única</option>
+                    <option value="2">Pregnuta de Selección Múltiple</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group m-form__group col-lg-12">
+                <label asp-for="Description"></label>
+                <input asp-for="Description" id="qDescription" class="form-control m-input" required>
+                <span asp-validation-for="Description" class="form-control-feedback"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group m-form__group col-lg-12" style="display:block;" id="question-text">
+                <label for="Name">Respuesta</label>
+                <textarea class="form-control" disabled="disabled" style="height: 37.19px; resize: none;"></textarea>
+            </div>
+            <div class="form-group col-lg-12" style="display:none;" id="question-multiple">
+                <button class="btn btn-primary btn-sm m-btn--icon" id="add-answer" type="button">
+                    <span>
+                        <i class="la la-plus"></i>
+                        <span>Añadir respuesta</span>
+                    </span>
+                </button>
+            </div>
+            <div id="question-answers" style="width: 100%;display:none;"></div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"> Cerrar </button>
+        <button type="button" class="btn btn-primary btn-submit add"> Guardar </button>
+    </div>
+</form>

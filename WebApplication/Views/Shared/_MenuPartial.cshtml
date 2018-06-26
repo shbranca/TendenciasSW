@@ -1,0 +1,99 @@
+﻿@using Microsoft.AspNetCore.Authorization
+
+<ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow ">
+    <li class="m-menu__item " aria-haspopup="true" is-active-route asp-controller="Home" asp-action="Index">
+        <a asp-controller="Home" asp-action="Index" asp-route-area="" class="m-menu__link ">
+            <i class="m-menu__link-icon la la-home"></i>
+            <span class="m-menu__link-text">
+                Inicio
+            </span>
+        </a>
+    </li>
+
+    @if (User.IsInRole(ConstantHelpers.ROLES.SUPERADMIN))
+    {
+        <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover" is-active-menu asp-area="Admin" asp-controller="Student,User">
+            <a href="javascript:;" class="m-menu__link m-menu__toggle">
+                <i class="m-menu__link-icon flaticon-share"></i>
+                <span class="m-menu__link-text">
+                    Gestionar Usuarios
+                </span>
+                <i class="m-menu__ver-arrow la la-angle-right"></i>
+            </a>
+            <div class="m-menu__submenu ">
+                <span class="m-menu__arrow"></span>
+                <ul class="m-menu__subnav">
+                    <li class="m-menu__item  m-menu__item--parent" aria-haspopup="true">
+                        <span class="m-menu__link">
+                            <span class="m-menu__link-text">
+                                Gestionar Usuarios
+                            </span>
+                        </span>
+                    </li>
+
+                    <li class="m-menu__item " aria-haspopup="true" is-active-route asp-controller="Athlete">
+                        <a asp-area="Admin" asp-controller="Athlete" asp-action="Index" class="m-menu__link ">
+                            <i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i>
+                            <span class="m-menu__link-text">
+                                Atletas
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="m-menu__item " aria-haspopup="true" is-active-route asp-controller="Coache">
+                        <a asp-area="Admin" asp-controller="Coach" asp-action="Index" class="m-menu__link ">
+                            <!-- asp-route-area="Teacher"-->
+                            <i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i>
+                            <span class="m-menu__link-text">
+                                Coaches
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
+    }
+
+    @if (User.IsInRole(ConstantHelpers.ROLES.COACH))
+    {
+        <li class="m-menu__item " aria-haspopup="true" is-active-route asp-controller="ClassSchedule">
+            <a asp-area="Coach" asp-controller="Survey" asp-action="Index" asp-route-area="Coach" class="m-menu__link ">
+                <i class="m-menu__link-icon flaticon-calendar-3"></i>
+                <span class="m-menu__link-text">
+                    Encuestas
+                </span>
+            </a>
+        </li>
+
+        <li class="m-menu__item " aria-haspopup="true" is-active-route asp-controller="StudentVelocity">
+            <a asp-action="Index" asp-controller="StudentVelocity" asp-area="Coach" asp-route-area="Coach" class="m-menu__link ">
+                <i class="m-menu__link-icon flaticon-list-3"></i>
+                <span class="m-menu__link-text">
+                    Registrar Velocidad
+                </span>
+            </a>
+        </li>
+    }
+
+    @if (User.IsInRole(ConstantHelpers.ROLES.ATHLETE))
+    {
+
+        <li class="m-menu__item " aria-haspopup="true" is-active-route asp-controller="ClassSchedule">
+            <a asp-area="Athlete" asp-controller="Survey" asp-action="Index" asp-route-area="Athlete" class="m-menu__link ">
+                <i class="m-menu__link-icon flaticon-calendar-3"></i>
+                <span class="m-menu__link-text">
+                    Encuestas
+                </span>
+            </a>
+        </li>
+        <li class="m-menu__item " aria-haspopup="true" is-active-route asp-controller="ClassSchedule">
+            <a asp-area="Athlete" asp-controller="ClassSchedule" asp-action="Index" asp-route-area="Student" class="m-menu__link ">
+                <i class="m-menu__link-icon flaticon-calendar-3"></i>
+                <span class="m-menu__link-text">
+                    Evolución de velocidad
+                </span>
+            </a>
+        </li>
+    }
+</ul>

@@ -1,0 +1,129 @@
+﻿@using WebApplication.ViewModels
+@model WebApplication.Areas.Coach.ViewModels.SurveyViewModel
+@{
+    ViewData["Title"] = "Gestión de encuestas";
+    ViewData["Breadcrumbs"] = new[] {
+new BreadcrumbViewData { Name = "Encuestas", Controller = "Survey", Action = "Index", Area = "Coach" },
+new BreadcrumbViewData { Name = "Editar encuesta" }
+};
+    ViewData["BackUrl"] = Url.Action("Index", "Survey", new { area = "Admin" });
+};
+
+<div class="m-content">
+    <div class="m-portlet">
+        <div class="m-portlet__head">
+            <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                    <h3 class="m-portlet__head-text">
+                        Informaci&oacute;n general
+                    </h3>
+                </div>
+            </div>
+            <div class="m-portlet__head-tools">
+                <ul class="m-portlet__nav">
+                    <li class="m-portlet__nav-item">
+                        <button class="btn btn-primary btn-sm m-btn m-btn--icon btn-edit save" title="Guardar cabecera">
+                            <span>
+                                <i class="la la-edit"></i>
+                                <span>Guardar cabecera</span>
+                            </span>
+                        </button>
+                        <button class="btn btn-danger btn-sm m-btn m-btn--icon btn-delete back" title="Salir">
+                            <span>
+                                <i class="la la-trash"></i>
+                                <span>Salir</span>
+                            </span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="m-portlet__body">
+            <div class=" row">
+                <div class="form-group m-form__group col-lg-4">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" class="form-control m-input" required>
+                    <span asp-validation-for="Name" class="form-control-feedback"></span>
+                </div>
+                <div class="form-group m-form__group col-lg-4">
+                    <label asp-for="PublicationDate"></label>
+                    <div class="input-group">
+                        <input asp-for="PublicationDate" class="form-control datepicker-input" required />
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="la la-calendar"></i></span>
+                        </div>
+                    </div>
+                    <span asp-validation-for="PublicationDate" class="form-control-feedback"></span>
+                </div>
+                <div class="form-group m-form__group col-lg-4">
+                    <label asp-for="FinishDate"></label>
+                    <div class="input-group">
+                        <input asp-for="FinishDate" class="form-control datepicker-input" required />
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="la la-calendar"></i></span>
+                        </div>
+                    </div>
+                    <span asp-validation-for="FinishDate" class="form-control-feedback"></span>
+                </div>
+            </div>
+            <div class=" row">
+                <div class="form-group m-form__group col-lg-4">
+                    <label asp-for="Code"></label>
+                    <input asp-for="Code" class="form-control m-input" required>
+                    <span asp-validation-for="Code" class="form-control-feedback"></span>
+                </div>
+                <div class="form-group m-form__group col-lg-8">
+                    <label asp-for="Description"></label>
+                    <input asp-for="Description" class="form-control m-input" required>
+                    <span asp-validation-for="Description" class="form-control-feedback"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="m-portlet">
+        <div class="m-portlet__head">
+            <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                    <h3 class="m-portlet__head-text">
+                        Listado de preguntas
+                    </h3>
+                </div>
+            </div>
+            <div class="m-portlet__head-tools">
+                <ul class="m-portlet__nav">
+                    <li class="m-portlet__nav-item">
+                        <button class="btn btn-primary btn-sm m-btn m-btn--icon" data-toggle="modal" data-target="#question_modal">
+                            <span>
+                                <i class="la la-plus"></i>
+                                <span>Nueva pregunta</span>
+                            </span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="m-portlet__body" id="questions">
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="question_modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    Pregunta
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @Html.Partial("_QuesionForm")
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/areas/coach/survey/edit.js"></script>
+}

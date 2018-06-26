@@ -1,0 +1,15 @@
+C:\Users\Optimus\source\repos\WebApplication\WebApplication\bin\Debug\netcoreapp2.0\WebApplication.deps.json
+C:\Users\Optimus\source\repos\WebApplication\WebApplication\bin\Debug\netcoreapp2.0\WebApplication.runtimeconfig.json
+C:\Users\Optimus\source\repos\WebApplication\WebApplication\bin\Debug\netcoreapp2.0\WebApplication.runtimeconfig.dev.json
+C:\Users\Optimus\source\repos\WebApplication\WebApplication\bin\Debug\netcoreapp2.0\WebApplication.dll
+C:\Users\Optimus\source\repos\WebApplication\WebApplication\bin\Debug\netcoreapp2.0\WebApplication.pdb
+C:\Users\Optimus\source\repos\WebApplication\WebApplication\bin\Debug\netcoreapp2.0\DAL.dll
+C:\Users\Optimus\source\repos\WebApplication\WebApplication\bin\Debug\netcoreapp2.0\DAL.pdb
+C:\Users\Optimus\source\repos\WebApplication\WebApplication\obj\Debug\netcoreapp2.0\WebApplication.csprojAssemblyReference.cache
+C:\Users\Optimus\source\repos\WebApplication\WebApplication\obj\Debug\netcoreapp2.0\WebApplication.csproj.CoreCompileInputs.cache
+C:\Users\Optimus\source\repos\WebApplication\WebApplication\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Optimus\source\repos\WebApplication\WebApplication\obj\Debug\netcoreapp2.0\WebApplication.AssemblyInfoInputs.cache
+C:\Users\Optimus\source\repos\WebApplication\WebApplication\obj\Debug\netcoreapp2.0\WebApplication.AssemblyInfo.cs
+C:\Users\Optimus\source\repos\WebApplication\WebApplication\obj\Debug\netcoreapp2.0\WebApplication.csproj.CopyComplete
+C:\Users\Optimus\source\repos\WebApplication\WebApplication\obj\Debug\netcoreapp2.0\WebApplication.dll
+C:\Users\Optimus\source\repos\WebApplication\WebApplication\obj\Debug\netcoreapp2.0\WebApplication.pdb
