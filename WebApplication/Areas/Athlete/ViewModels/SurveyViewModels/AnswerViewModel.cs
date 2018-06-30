@@ -7,14 +7,9 @@ using System.Threading.Tasks;
 namespace WebApplication.Areas.Athlete.ViewModels
 {
     public class AnswerViewModel
-    {
-        [Required]
-        public Guid Id { get; set; }
-
-        [Required]
-        public Guid QuestionId { get; set; }
-
-        [Required]
+    { 
+        public Guid Id { get; set; } 
+        public Guid QuestionId { get; set; } 
         public String Description { get; set; }
     }
 }

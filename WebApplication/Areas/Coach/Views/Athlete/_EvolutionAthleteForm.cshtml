@@ -1,0 +1,25 @@
+﻿@model WebApplication.Areas.Coach.ViewModels.AthleteViewModels.EvolutionAthleteViewModel
+
+<div class=" row">
+    
+    <input name="Id" id="evolutionAthlete_id" hidden />
+    <div class="form-group m-form__group col-lg-12">
+        <label asp-for="FiftyMeters"></label>
+        <input asp-for="FiftyMeters" class="form-control m-input" required>
+        <span asp-validation-for="FiftyMeters" class="form-control-feedback"></span>
+    </div>
+    <div class="form-group m-form__group col-lg-12">
+        <label asp-for="OneHundredMeters"></label>
+        <input asp-for="OneHundredMeters" class="form-control m-input" required>
+        <span asp-validation-for="OneHundredMeters" class="form-control-feedback"></span>
+    </div>
+    <div class="form-group m-form__group col-lg-12">
+        <label asp-for="FourHundredMeters"></label>
+        <input asp-for="FourHundredMeters" class="form-control m-input" required>
+        <span asp-validation-for="FourHundredMeters" class="form-control-feedback"></span>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal"> Cerrar </button>
+    <button type="submit" class="btn btn-primary btn-submit add"> Guardar </button>
+</div>

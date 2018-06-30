@@ -40,11 +40,15 @@ namespace DAL.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<Guid>("AnswerId");
+
                     b.Property<string>("AthleteId");
 
                     b.Property<string>("Description");
 
                     b.Property<Guid>("QuestionId");
+
+                    b.Property<Guid>("SurveyId");
 
                     b.HasKey("Id");
 
@@ -141,6 +145,26 @@ namespace DAL.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("DAL.Models.EvolutionAthlete", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("AthleteId");
+
+                    b.Property<decimal>("FiftyMeters");
+
+                    b.Property<decimal>("FourHundredMeters");
+
+                    b.Property<decimal>("OneHundredMeters");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AthleteId");
+
+                    b.ToTable("EvolutionAthletes");
                 });
 
             modelBuilder.Entity("DAL.Models.Question", b =>
@@ -285,6 +309,13 @@ namespace DAL.Migrations
                 });
 
             modelBuilder.Entity("DAL.Models.AnswerByAthlete", b =>
+                {
+                    b.HasOne("DAL.Models.ApplicationUser", "Athlete")
+                        .WithMany()
+                        .HasForeignKey("AthleteId");
+                });
+
+            modelBuilder.Entity("DAL.Models.EvolutionAthlete", b =>
                 {
                     b.HasOne("DAL.Models.ApplicationUser", "Athlete")
                         .WithMany()

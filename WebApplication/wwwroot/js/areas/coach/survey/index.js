@@ -32,8 +32,9 @@
                 sortable: false,
                 filterable: false,
                 template: function (row) {
-                    return '<a href="' + ("/coach/encuestas/editar/" + row.id).proto().parseURL() + '" class="btn btn-secondary btn-sm m-btn m-btn--icon"><span><i class="la la-edit"></i><span> Detalle </span></span></a>' +
-                        ' <button class="btn btn-danger m-btn btn-sm m-btn--icon m-btn--icon-only delete" data-id="' + row.id + '"><i class="la la-trash"></i></button>';
+                    return  '<a href="' + ("/coach/encuestas/editar/" + row.id).proto().parseURL() + '" class="btn btn-secondary btn-sm m-btn m-btn--icon"><span><i class="la la-edit"></i><span> Detalle </span></span></a>' +
+                            '<button class="btn btn-secondary btn-sm m-btn m-btn--icon btn-users" data-surveyid='+row.id+'  ><span><i class="la la-users"></i><span>Respuestas</span></span></a>' +
+                            ' <button class="btn btn-danger m-btn btn-sm m-btn--icon m-btn--icon-only delete" data-id="' + row.id + '"><i class="la la-trash"></i></button>';
                 }
             }
         ]
@@ -90,10 +91,20 @@
             });
     };
 
+    var events = {
+        init: function() {
+            $('.btn-users').on('click', function () {
+                console.log("Luhso");
+                var surveyId = $(this).data('surveyid');
+                console.log(surveyId);
+            });
+        }
+    }
+
     return {
         init: function () {
             datatable = $(".m-datatable").mDatatable(options);
-
+            events.init();
             $(".m-datatable")
                 .on("click", ".delete", function () {
                     var id = $(this).data("id");

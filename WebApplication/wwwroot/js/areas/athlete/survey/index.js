@@ -32,7 +32,7 @@
                 sortable: false,
                 filterable: false,
                 template: function (row) {
-                    return '<a href="' + ("/atleta/encuestas/responder/" + row.id).proto().parseURL() + '" class="btn btn-secondary btn-sm m-btn m-btn--icon"><span><i class="la la-edit"></i><span> Detalle </span></span></a>';                       
+                    return '<a href="' + ("/atleta/encuestas/responder/" + row.id).proto().parseURL() + '" class="btn btn-secondary btn-sm m-btn m-btn--icon"><span><i class="la la-edit"></i><span> Responder </span></span></a>';                       
                 }
             }
         ]

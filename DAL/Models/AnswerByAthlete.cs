@@ -7,9 +7,10 @@ namespace DAL.Models
     public class AnswerByAthlete
     {
         public Guid Id { get; set; }
+        public Guid SurveyId { get; set; }
         public Guid QuestionId { get; set; }
-        public ApplicationUser Athlete { get; set; }
-     
+        public Guid AnswerId { get; set; }
+        public ApplicationUser Athlete { get; set; } 
         public String Description { get; set; }
     }
 }

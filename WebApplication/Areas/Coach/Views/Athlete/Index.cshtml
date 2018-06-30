@@ -1,9 +1,10 @@
-﻿@using WebApplication.ViewModels
+﻿
+@using WebApplication.ViewModels
 @{
-    ViewBag.Title = "Gestión de Atletas";
+    ViewBag.Title = "Atletas";
     ViewBag.SubTitle = "Listado de Atletas";
     ViewBag.Breadcrumbs = new[] {
-    new BreadcrumbViewData { Name = ViewBag.Title, Controller = null, Action = null }
+new BreadcrumbViewData { Name = ViewBag.Title, Controller = null, Action = null }
 };
 }
 
@@ -15,9 +16,7 @@
         width: 0%;
     }
 </style>
-
-
-
+ 
 <div class="m-content">
     <div class="m-portlet">
         <div class="m-portlet__head">
@@ -44,16 +43,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-4 order-1 order-xl-2 m--align-right">
-                        <a href="@Url.Action("Add","Athlete")" class="btn btn-primary m-btn m-btn--air m-btn--icon btn-add">
-                            <span>
-                                <i class="la la-plus"></i>
-                                <span>Nuevo Atleta</span>
-                            </span>
-                        </a>
-                        <div class="m-separator m-separator--dashed d-xl-none"></div>
-                    </div>
+                    </div> 
                     <div class="col-xl-4 order-1 order-xl-2 m--align-right">
                         <div class="m-separator m-separator--dashed d-xl-none"></div>
                     </div>
@@ -63,45 +53,7 @@
         </div>
     </div>
 </div>
-
  
-<div class="modal fade" id="m_modal_1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">
-                    Importar de Excel
-                </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">
-                        &times;
-                    </span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form asp-action="UploadExcel" class="m-form" id="formupload">
-                    <div class="form-group m-form__group row">
-                        <label class="col-form-label col-lg-3 col-sm-12">Archivo</label>
-                        <div class="col-lg-9 col-md-12 col-sm-12">
-                            <div class="m-dropzone dropzone m-dropzone--primary dz-clickable" action="/admin/alumnos/subirexcel" id="m-drop-one" style="height: 50vh;">
-                                <div class="m-dropzone__msg dz-message needsclick">
-                                    <h3 class="m-dropzone__msg-title">Arrastra tu archivo aquí o haz click para Examinar.</h3>
-                                    <span class="m-dropzone__msg-desc">Solo archivos .xlsx y .xls son permitidos.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary" id="btnupload" disabled>Subir</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--end::Modal-->
-<!-- Upload preview template begin -->
 <div id="preview-template" style="display: none;">
     <div class="dz-preview dz-file-preview" style="display:inline-block;margin:10px;">
         <div class="dz-details">
@@ -123,11 +75,10 @@
             <div class="progress-bar progress-bar-success" style="width:0%;" data-dz-uploadprogress></div>
         </div>
     </div>
-</div>
-<!-- Upload preview template end -->
+</div> 
+
 @section Scripts {
 
-    <script src="~/js/areas/admin/athlete/index.js"></script>
-    <script src="~/js/jquery-ajax-unobtrusive.min.js"></script>
-    <script src="~/js/areas/admin/athlete/add.js"></script>
+    <script src="~/js/areas/coach/athlete/index.js"></script>
+    <script src="~/js/jquery-ajax-unobtrusive.min.js"></script> 
 }

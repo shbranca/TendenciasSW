@@ -80,7 +80,9 @@ namespace DAL.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
+                    SurveyId = table.Column<Guid>(nullable: false),
                     QuestionId = table.Column<Guid>(nullable: false),
+                    AnswerId = table.Column<Guid>(nullable: false),
                     AthleteId = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true)
                 },
@@ -178,6 +180,27 @@ namespace DAL.Migrations
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "EvolutionAthletes",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    AthleteId = table.Column<string>(nullable: true),
+                    FiftyMeters = table.Column<decimal>(nullable: false),
+                    OneHundredMeters = table.Column<decimal>(nullable: false),
+                    FourHundredMeters = table.Column<decimal>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EvolutionAthletes", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_EvolutionAthletes_AspNetUsers_AthleteId",
+                        column: x => x.AthleteId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -292,6 +315,11 @@ namespace DAL.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_EvolutionAthletes_AthleteId",
+                table: "EvolutionAthletes",
+                column: "AthleteId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Questions_SurveyId",
                 table: "Questions",
                 column: "SurveyId");
@@ -324,6 +352,9 @@ namespace DAL.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "EvolutionAthletes");
 
             migrationBuilder.DropTable(
                 name: "Questions");

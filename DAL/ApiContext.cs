@@ -13,6 +13,7 @@ namespace DAL
         public DbSet<Question> Questions{ get; set; }
         public DbSet<Answer> Answers{ get; set; }
         public DbSet<AnswerByAthlete> AnswerByAthletes{ get; set; }
+        public DbSet<EvolutionAthlete> EvolutionAthletes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

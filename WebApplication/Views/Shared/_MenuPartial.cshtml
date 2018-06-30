@@ -57,7 +57,7 @@
 
     @if (User.IsInRole(ConstantHelpers.ROLES.COACH))
     {
-        <li class="m-menu__item " aria-haspopup="true" is-active-route asp-controller="ClassSchedule">
+        <li class="m-menu__item " aria-haspopup="true" is-active-route asp-controller="Survey">
             <a asp-area="Coach" asp-controller="Survey" asp-action="Index" asp-route-area="Coach" class="m-menu__link ">
                 <i class="m-menu__link-icon flaticon-calendar-3"></i>
                 <span class="m-menu__link-text">
@@ -66,8 +66,8 @@
             </a>
         </li>
 
-        <li class="m-menu__item " aria-haspopup="true" is-active-route asp-controller="StudentVelocity">
-            <a asp-action="Index" asp-controller="StudentVelocity" asp-area="Coach" asp-route-area="Coach" class="m-menu__link ">
+        <li class="m-menu__item " aria-haspopup="true" is-active-route asp-controller="Athlete">
+            <a asp-action="Index" asp-controller="Athlete" asp-area="Coach" asp-route-area="Coach" class="m-menu__link ">
                 <i class="m-menu__link-icon flaticon-list-3"></i>
                 <span class="m-menu__link-text">
                     Registrar Velocidad
