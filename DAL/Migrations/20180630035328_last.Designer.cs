@@ -4,14 +4,16 @@ using DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DAL.Migrations
 {
     [DbContext(typeof(ApiContext))]
-    partial class ApiContextModelSnapshot : ModelSnapshot
+    [Migration("20180630035328_last")]
+    partial class last
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -154,11 +156,17 @@ namespace DAL.Migrations
 
                     b.Property<string>("AthleteId");
 
+                    b.Property<DateTime?>("CreatedAt");
+
+                    b.Property<DateTime?>("DeletedAt");
+
                     b.Property<decimal>("FiftyMeters");
 
                     b.Property<decimal>("FourHundredMeters");
 
                     b.Property<decimal>("OneHundredMeters");
+
+                    b.Property<DateTime?>("UpdatedAt");
 
                     b.HasKey("Id");
 

@@ -61,7 +61,7 @@ namespace WebApplication.Areas.Coach.Controller
         [Route("atleta/getevolutions/{id}")]
         public async Task<IActionResult> GetEvolutionAthlete(string id)
         {
-            var evolutions = await _context.EvolutionAthletes.Where(x => x.Athlete.Id == id).ToListAsync();
+            var evolutions = await _context.EvolutionAthletes.Where(x => x.Athlete.Id == id && x.DeletedAt == null).ToListAsync();
 
             return Ok(evolutions);
         }
@@ -83,7 +83,8 @@ namespace WebApplication.Areas.Coach.Controller
                 Athlete = athlete,
                 FiftyMeters = model.FiftyMeters,
                 OneHundredMeters = model.OneHundredMeters,
-                FourHundredMeters = model.FourHundredMeters
+                FourHundredMeters = model.FourHundredMeters,
+                CreatedAt = DateTime.Now
             };
             await _context.EvolutionAthletes.AddAsync(evolutionAthlete);
             await _context.SaveChangesAsync();
@@ -104,6 +105,8 @@ namespace WebApplication.Areas.Coach.Controller
                 evolution.FiftyMeters= model.FiftyMeters;
                 evolution.OneHundredMeters= model.OneHundredMeters;
                 evolution.FourHundredMeters = model.FourHundredMeters;
+                evolution.UpdatedAt = DateTime.Now;
+
                 await _context.SaveChangesAsync();
                 return Ok();
             }
@@ -117,7 +120,7 @@ namespace WebApplication.Areas.Coach.Controller
         public async Task<IActionResult> DeleteEvolution(Guid id)
         {
             var evolution = await _context.EvolutionAthletes.Where(x => x.Id == id).FirstOrDefaultAsync();
-            _context.EvolutionAthletes.Remove(evolution);
+            evolution.DeletedAt = DateTime.Now;
             _context.SaveChanges();
             return Ok();
         }
